@@ -47,6 +47,14 @@ playground.xcworkspace
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
 # Carthage/Checkouts
 
+# CocoaPods
+Pods/
+Podfile.lock
+# Xcode
+DerivedData/
+*.xcuserstate
+*.xcuserdata/
+
 Carthage/Build/
 
 # fastlane
