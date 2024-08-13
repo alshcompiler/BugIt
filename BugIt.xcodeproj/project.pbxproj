@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7110DCB32C6B570F00760522 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110DCB22C6B570F00760522 /* HTTPClient.swift */; };
+		7110DCB52C6B5AF900760522 /* AlamofireHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110DCB42C6B5AF900760522 /* AlamofireHTTPClient.swift */; };
 		71447F4A2C67D3CA00C9C61F /* BugItApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71447F492C67D3CA00C9C61F /* BugItApp.swift */; };
 		71447F4C2C67D3CA00C9C61F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71447F4B2C67D3CA00C9C61F /* ContentView.swift */; };
 		71447F4E2C67D3CB00C9C61F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71447F4D2C67D3CB00C9C61F /* Assets.xcassets */; };
@@ -14,6 +16,9 @@
 		71447F5B2C67D3CB00C9C61F /* BugItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71447F5A2C67D3CB00C9C61F /* BugItTests.swift */; };
 		71447F652C67D3CB00C9C61F /* BugItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71447F642C67D3CB00C9C61F /* BugItUITests.swift */; };
 		71447F672C67D3CB00C9C61F /* BugItUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71447F662C67D3CB00C9C61F /* BugItUITestsLaunchTests.swift */; };
+		7148849E2C69543200EA6355 /* GoogleSheetsRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7148849D2C69543200EA6355 /* GoogleSheetsRepo.swift */; };
+		714884A02C695C7900EA6355 /* client_601545119036-nv78jf2rmcftsqnf31a3251ha24nb1q5.apps.googleusercontent.com.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7148849F2C695C7900EA6355 /* client_601545119036-nv78jf2rmcftsqnf31a3251ha24nb1q5.apps.googleusercontent.com.plist */; };
+		87C3AE3F97E8D510976B37FA /* Pods_BugIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5494C37DFFDEA3862C175B86 /* Pods_BugIt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5494C37DFFDEA3862C175B86 /* Pods_BugIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BugIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7110DCB22C6B570F00760522 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		7110DCB42C6B5AF900760522 /* AlamofireHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireHTTPClient.swift; sourceTree = "<group>"; };
 		71447F462C67D3CA00C9C61F /* BugIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BugIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71447F492C67D3CA00C9C61F /* BugItApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugItApp.swift; sourceTree = "<group>"; };
 		71447F4B2C67D3CA00C9C61F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +52,11 @@
 		71447F602C67D3CB00C9C61F /* BugItUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BugItUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71447F642C67D3CB00C9C61F /* BugItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugItUITests.swift; sourceTree = "<group>"; };
 		71447F662C67D3CB00C9C61F /* BugItUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugItUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7148849D2C69543200EA6355 /* GoogleSheetsRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSheetsRepo.swift; sourceTree = "<group>"; };
+		7148849F2C695C7900EA6355 /* client_601545119036-nv78jf2rmcftsqnf31a3251ha24nb1q5.apps.googleusercontent.com.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "client_601545119036-nv78jf2rmcftsqnf31a3251ha24nb1q5.apps.googleusercontent.com.plist"; sourceTree = "<group>"; };
+		714884A12C695CD100EA6355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BE5A0757722810530BD57C1C /* Pods-BugIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BugIt.debug.xcconfig"; path = "Target Support Files/Pods-BugIt/Pods-BugIt.debug.xcconfig"; sourceTree = "<group>"; };
+		D2F2ABB23DBFEE61DB102BFC /* Pods-BugIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BugIt.release.xcconfig"; path = "Target Support Files/Pods-BugIt/Pods-BugIt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87C3AE3F97E8D510976B37FA /* Pods_BugIt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7110DCB12C6B56FF00760522 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7110DCB22C6B570F00760522 /* HTTPClient.swift */,
+				7110DCB42C6B5AF900760522 /* AlamofireHTTPClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		71447F3D2C67D3CA00C9C61F = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +101,8 @@
 				71447F592C67D3CB00C9C61F /* BugItTests */,
 				71447F632C67D3CB00C9C61F /* BugItUITests */,
 				71447F472C67D3CA00C9C61F /* Products */,
+				97A017A0E803CF51A9F71B5F /* Pods */,
+				A24F1F7327B8745955E8CD50 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +119,9 @@
 		71447F482C67D3CA00C9C61F /* BugIt */ = {
 			isa = PBXGroup;
 			children = (
+				714884A12C695CD100EA6355 /* Info.plist */,
+				7110DCB12C6B56FF00760522 /* Network */,
+				7148849C2C69540400EA6355 /* Sheets */,
 				71447F492C67D3CA00C9C61F /* BugItApp.swift */,
 				71447F4B2C67D3CA00C9C61F /* ContentView.swift */,
 				71447F4D2C67D3CB00C9C61F /* Assets.xcassets */,
@@ -127,6 +155,32 @@
 			path = BugItUITests;
 			sourceTree = "<group>";
 		};
+		7148849C2C69540400EA6355 /* Sheets */ = {
+			isa = PBXGroup;
+			children = (
+				7148849F2C695C7900EA6355 /* client_601545119036-nv78jf2rmcftsqnf31a3251ha24nb1q5.apps.googleusercontent.com.plist */,
+				7148849D2C69543200EA6355 /* GoogleSheetsRepo.swift */,
+			);
+			path = Sheets;
+			sourceTree = "<group>";
+		};
+		97A017A0E803CF51A9F71B5F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE5A0757722810530BD57C1C /* Pods-BugIt.debug.xcconfig */,
+				D2F2ABB23DBFEE61DB102BFC /* Pods-BugIt.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A24F1F7327B8745955E8CD50 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5494C37DFFDEA3862C175B86 /* Pods_BugIt.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +188,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 71447F6A2C67D3CB00C9C61F /* Build configuration list for PBXNativeTarget "BugIt" */;
 			buildPhases = (
+				ACA38683EDB0F47E4F79F938 /* [CP] Check Pods Manifest.lock */,
 				71447F422C67D3CA00C9C61F /* Sources */,
 				71447F432C67D3CA00C9C61F /* Frameworks */,
 				71447F442C67D3CA00C9C61F /* Resources */,
+				A8A6E61E9CD8B767FF8A7148 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,6 +289,7 @@
 			files = (
 				71447F512C67D3CB00C9C61F /* Preview Assets.xcassets in Resources */,
 				71447F4E2C67D3CB00C9C61F /* Assets.xcassets in Resources */,
+				714884A02C695C7900EA6355 /* client_601545119036-nv78jf2rmcftsqnf31a3251ha24nb1q5.apps.googleusercontent.com.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,13 +309,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A8A6E61E9CD8B767FF8A7148 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BugIt/Pods-BugIt-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BugIt/Pods-BugIt-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BugIt/Pods-BugIt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACA38683EDB0F47E4F79F938 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BugIt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		71447F422C67D3CA00C9C61F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7148849E2C69543200EA6355 /* GoogleSheetsRepo.swift in Sources */,
 				71447F4C2C67D3CA00C9C61F /* ContentView.swift in Sources */,
+				7110DCB32C6B570F00760522 /* HTTPClient.swift in Sources */,
 				71447F4A2C67D3CA00C9C61F /* BugItApp.swift in Sources */,
+				7110DCB52C6B5AF900760522 /* AlamofireHTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,14 +518,18 @@
 		};
 		71447F6B2C67D3CB00C9C61F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE5A0757722810530BD57C1C /* Pods-BugIt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BugIt/Preview Content\"";
+				DEVELOPMENT_TEAM = X575K8ZA76;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BugIt/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -444,14 +550,18 @@
 		};
 		71447F6C2C67D3CB00C9C61F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2F2ABB23DBFEE61DB102BFC /* Pods-BugIt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BugIt/Preview Content\"";
+				DEVELOPMENT_TEAM = X575K8ZA76;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BugIt/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
