@@ -7,13 +7,18 @@ target 'BugIt' do
 
   # Pods for BugIt
 
-  target 'BugItTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+pod 'GoogleSignIn'
+pod 'GoogleSignInSwiftSupport'
+pod 'Alamofire'
+pod 'netfox'
 
-  target 'BugItUITests' do
-    # Pods for testing
-  end
+#  target 'BugItTests' do
+#    inherit! :search_paths
+#    # Pods for testing
+#  end
+#
+#  target 'BugItUITests' do
+#    # Pods for testing
+#  end
 
 end

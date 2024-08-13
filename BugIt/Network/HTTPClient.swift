@@ -41,3 +41,9 @@ public enum NetworkError: LocalizedError {
     }
 
 }
+
+public extension HTTPClient {
+    func performRequest(method: HTTPMethod, url: String, parameters: [String: Any] = [:], encoding: ParameterEncoding = .urlEncoding, isAuthorized: Bool = true) async throws -> Data {
+        try await performRequest(method: method, url: url, parameters: parameters, encoding: encoding, isAuthorized: isAuthorized)
+    }
+}
