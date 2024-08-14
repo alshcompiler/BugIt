@@ -10,7 +10,7 @@ import GoogleSignIn
 protocol BugServices {
     func getSheets() async throws -> GoogleSheetsModel
     func createTab(title: String) async  throws -> Int
-    func recordBug(tabName: String, description: String, imageURLs: [String]) async throws -> Data
+    func recordBug(tabName: String, description: String, imageURLs: [String]) async throws
 }
 
 struct GoogleSheetsService: BugServices {
@@ -19,22 +19,6 @@ struct GoogleSheetsService: BugServices {
     init(httpClient: HTTPClient) {
         self.httpClient = httpClient
     }
-
-    func recordBug(tabName: String, description: String, imageURLs: [String]) async throws -> Data {
-
-        let parameters = ["values" : [[description] + imageURLs]]
-        let url =  .baseURL + .spreadSheetID + "/values/\(tabName):append?valueInputOption=RAW"
-        let response = try await httpClient.performRequest(
-            method: .post,
-            url: url,
-            parameters: parameters,
-            encoding: .jsonEncoding,
-            responseType: Data.self
-        )
-
-        return response
-    }
-
 
     func createTab(title: String) async  throws -> Int {
         let parameters = [
@@ -69,6 +53,19 @@ struct GoogleSheetsService: BugServices {
         )
 
         return response
+    }
+
+    func recordBug(tabName: String, description: String, imageURLs: [String]) async throws {
+
+        let parameters = ["values" : [[description] + imageURLs]]
+        let url =  .baseURL + .spreadSheetID + "/values/\(tabName):append?valueInputOption=RAW"
+        _ = try await httpClient.performRequest(
+            method: .post,
+            url: url,
+            parameters: parameters,
+            encoding: .jsonEncoding,
+            responseType: Data.self
+        )
     }
 }
 

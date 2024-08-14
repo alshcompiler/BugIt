@@ -7,15 +7,26 @@ import Foundation
         self.bugService = bugService
     }
 
+    private func handleTodayTab() async throws {
+        let response = try await bugService.getSheets()
+        let tabID: Int
+        if let tab =  response.todayTabID {
+            tabID = tab
+        } else {
+            tabID = try await bugService.createTab(title: .today)
+        }
+        var tabs = UserDefaultsShared.sheetTabs
+        tabs[.today] = tabID
+        UserDefaultsShared.sheetTabs = tabs
+    }
+    
     func reportBug(description: String) async {
         do {
-            let response = try await bugService.getSheets()
-            let tab: Int
-            if let tabID =  response.todayTabID {
-                tab = tabID
-            } else {
-                tab = try await bugService.createTab(title: .today)
+            // only handle checking existing tab or creating new one if no record of it exists
+            if UserDefaultsShared.sheetTabs[.today] == nil {
+                try await handleTodayTab()
             }
+
 
             try await bugService.recordBug(tabName: .today, description: "description", imageURLs: ["https://images.app.goo.gl/Y5Z7frTDHmaEe9Nf8", "https://images.app.goo.gl/Vwj3RcewGNNSDWtm8"])
         } catch {

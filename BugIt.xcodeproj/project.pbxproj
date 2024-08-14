@@ -19,6 +19,7 @@
 		71447F652C67D3CB00C9C61F /* BugItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71447F642C67D3CB00C9C61F /* BugItUITests.swift */; };
 		71447F672C67D3CB00C9C61F /* BugItUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71447F662C67D3CB00C9C61F /* BugItUITestsLaunchTests.swift */; };
 		7148849E2C69543200EA6355 /* GoogleSheetsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7148849D2C69543200EA6355 /* GoogleSheetsService.swift */; };
+		7183D1352C6D5A0500EAB487 /* UserDefaultsShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183D1342C6D5A0500EAB487 /* UserDefaultsShared.swift */; };
 		87C3AE3F97E8D510976B37FA /* Pods_BugIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5494C37DFFDEA3862C175B86 /* Pods_BugIt.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		71447F662C67D3CB00C9C61F /* BugItUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugItUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7148849D2C69543200EA6355 /* GoogleSheetsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSheetsService.swift; sourceTree = "<group>"; };
 		714884A12C695CD100EA6355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7183D1342C6D5A0500EAB487 /* UserDefaultsShared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsShared.swift; sourceTree = "<group>"; };
 		BE5A0757722810530BD57C1C /* Pods-BugIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BugIt.debug.xcconfig"; path = "Target Support Files/Pods-BugIt/Pods-BugIt.debug.xcconfig"; sourceTree = "<group>"; };
 		D2F2ABB23DBFEE61DB102BFC /* Pods-BugIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BugIt.release.xcconfig"; path = "Target Support Files/Pods-BugIt/Pods-BugIt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				714884A12C695CD100EA6355 /* Info.plist */,
+				7183D1322C6D59E100EAB487 /* Core */,
 				7110DCB12C6B56FF00760522 /* Network */,
 				7148849C2C69540400EA6355 /* ReportBug */,
 				71447F492C67D3CA00C9C61F /* BugItApp.swift */,
@@ -197,6 +200,22 @@
 				7110DCB82C6C0C1E00760522 /* UI */,
 			);
 			path = ReportBug;
+			sourceTree = "<group>";
+		};
+		7183D1322C6D59E100EAB487 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				7183D1332C6D59E900EAB487 /* Utilities */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		7183D1332C6D59E900EAB487 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7183D1342C6D5A0500EAB487 /* UserDefaultsShared.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		97A017A0E803CF51A9F71B5F /* Pods */ = {
@@ -391,6 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7110DCBE2C6C0F3200760522 /* GoogleSheetsModel.swift in Sources */,
+				7183D1352C6D5A0500EAB487 /* UserDefaultsShared.swift in Sources */,
 				7148849E2C69543200EA6355 /* GoogleSheetsService.swift in Sources */,
 				7110DCB72C6B856A00760522 /* ReportBugViewModel.swift in Sources */,
 				71447F4C2C67D3CA00C9C61F /* ContentView.swift in Sources */,
