@@ -14,6 +14,8 @@ import Foundation
             tabID = tab
         } else {
             tabID = try await bugService.createTab(title: .today)
+            // adding headers to the newly created sheet
+            try await bugService.recordBug(tabName: .today, description: "Bug description", imageURLs: ["screenshot URLs..."])
         }
         var tabs = UserDefaultsShared.sheetTabs
         tabs[.today] = tabID
