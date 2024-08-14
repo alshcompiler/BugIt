@@ -14,11 +14,12 @@ public enum ParameterEncoding {
 }
 
 public protocol HTTPClient {
-    func performRequest(method: HTTPMethod,
-                        url: String,
-                        parameters: [String: Any],
-                        encoding: ParameterEncoding,
-                        isAuthorized: Bool) async throws -> Data
+    func performRequest<T: Decodable>(method: HTTPMethod,
+                                      url: String,
+                                      parameters: [String: Any],
+                                      encoding: ParameterEncoding,
+                                      isAuthorized: Bool,
+                                      responseType: T.Type) async throws -> T
     func upload(url: String, fileData: Data, parameters: [String: String]) async throws
 }
 
@@ -43,7 +44,17 @@ public enum NetworkError: LocalizedError {
 }
 
 public extension HTTPClient {
-    func performRequest(method: HTTPMethod, url: String, parameters: [String: Any] = [:], encoding: ParameterEncoding = .urlEncoding, isAuthorized: Bool = true) async throws -> Data {
-        try await performRequest(method: method, url: url, parameters: parameters, encoding: encoding, isAuthorized: isAuthorized)
+    func performRequest<T: Decodable>(method: HTTPMethod,
+                                      url: String,
+                                      parameters: [String: Any] = [:],
+                                      encoding: ParameterEncoding = .urlEncoding,
+                                      isAuthorized: Bool = true,
+                                      responseType: T.Type) async throws -> T {
+        try await performRequest(method: method,
+                                 url: url,
+                                 parameters: parameters,
+                                 encoding: encoding,
+                                 isAuthorized: isAuthorized,
+                                 responseType: responseType)
     }
 }

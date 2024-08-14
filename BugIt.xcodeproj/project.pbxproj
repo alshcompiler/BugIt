@@ -10,6 +10,7 @@
 		7110DCB32C6B570F00760522 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110DCB22C6B570F00760522 /* HTTPClient.swift */; };
 		7110DCB52C6B5AF900760522 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110DCB42C6B5AF900760522 /* URLSessionHTTPClient.swift */; };
 		7110DCB72C6B856A00760522 /* ReportBugViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110DCB62C6B856A00760522 /* ReportBugViewModel.swift */; };
+		7110DCBE2C6C0F3200760522 /* GoogleSheetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110DCBD2C6C0F3200760522 /* GoogleSheetsModel.swift */; };
 		71447F4A2C67D3CA00C9C61F /* BugItApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71447F492C67D3CA00C9C61F /* BugItApp.swift */; };
 		71447F4C2C67D3CA00C9C61F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71447F4B2C67D3CA00C9C61F /* ContentView.swift */; };
 		71447F4E2C67D3CB00C9C61F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71447F4D2C67D3CB00C9C61F /* Assets.xcassets */; };
@@ -17,8 +18,7 @@
 		71447F5B2C67D3CB00C9C61F /* BugItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71447F5A2C67D3CB00C9C61F /* BugItTests.swift */; };
 		71447F652C67D3CB00C9C61F /* BugItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71447F642C67D3CB00C9C61F /* BugItUITests.swift */; };
 		71447F672C67D3CB00C9C61F /* BugItUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71447F662C67D3CB00C9C61F /* BugItUITestsLaunchTests.swift */; };
-		7148849E2C69543200EA6355 /* GoogleSheetsRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7148849D2C69543200EA6355 /* GoogleSheetsRepo.swift */; };
-		714884A02C695C7900EA6355 /* client_601545119036-nv78jf2rmcftsqnf31a3251ha24nb1q5.apps.googleusercontent.com.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7148849F2C695C7900EA6355 /* client_601545119036-nv78jf2rmcftsqnf31a3251ha24nb1q5.apps.googleusercontent.com.plist */; };
+		7148849E2C69543200EA6355 /* GoogleSheetsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7148849D2C69543200EA6355 /* GoogleSheetsService.swift */; };
 		87C3AE3F97E8D510976B37FA /* Pods_BugIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5494C37DFFDEA3862C175B86 /* Pods_BugIt.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +44,7 @@
 		7110DCB22C6B570F00760522 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		7110DCB42C6B5AF900760522 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		7110DCB62C6B856A00760522 /* ReportBugViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportBugViewModel.swift; sourceTree = "<group>"; };
+		7110DCBD2C6C0F3200760522 /* GoogleSheetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSheetsModel.swift; sourceTree = "<group>"; };
 		71447F462C67D3CA00C9C61F /* BugIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BugIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71447F492C67D3CA00C9C61F /* BugItApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugItApp.swift; sourceTree = "<group>"; };
 		71447F4B2C67D3CA00C9C61F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,8 +55,7 @@
 		71447F602C67D3CB00C9C61F /* BugItUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BugItUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71447F642C67D3CB00C9C61F /* BugItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugItUITests.swift; sourceTree = "<group>"; };
 		71447F662C67D3CB00C9C61F /* BugItUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugItUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		7148849D2C69543200EA6355 /* GoogleSheetsRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSheetsRepo.swift; sourceTree = "<group>"; };
-		7148849F2C695C7900EA6355 /* client_601545119036-nv78jf2rmcftsqnf31a3251ha24nb1q5.apps.googleusercontent.com.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "client_601545119036-nv78jf2rmcftsqnf31a3251ha24nb1q5.apps.googleusercontent.com.plist"; sourceTree = "<group>"; };
+		7148849D2C69543200EA6355 /* GoogleSheetsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSheetsService.swift; sourceTree = "<group>"; };
 		714884A12C695CD100EA6355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BE5A0757722810530BD57C1C /* Pods-BugIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BugIt.debug.xcconfig"; path = "Target Support Files/Pods-BugIt/Pods-BugIt.debug.xcconfig"; sourceTree = "<group>"; };
 		D2F2ABB23DBFEE61DB102BFC /* Pods-BugIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BugIt.release.xcconfig"; path = "Target Support Files/Pods-BugIt/Pods-BugIt.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +96,38 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		7110DCB82C6C0C1E00760522 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		7110DCB92C6C0C8000760522 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7110DCBC2C6C0F0700760522 /* Service */,
+				7110DCBB2C6C0EF500760522 /* Model */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		7110DCBB2C6C0EF500760522 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7110DCBD2C6C0F3200760522 /* GoogleSheetsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7110DCBC2C6C0F0700760522 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7148849D2C69543200EA6355 /* GoogleSheetsService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		71447F3D2C67D3CA00C9C61F = {
 			isa = PBXGroup;
 			children = (
@@ -123,7 +155,7 @@
 			children = (
 				714884A12C695CD100EA6355 /* Info.plist */,
 				7110DCB12C6B56FF00760522 /* Network */,
-				7148849C2C69540400EA6355 /* Sheets */,
+				7148849C2C69540400EA6355 /* ReportBug */,
 				71447F492C67D3CA00C9C61F /* BugItApp.swift */,
 				7110DCB62C6B856A00760522 /* ReportBugViewModel.swift */,
 				71447F4B2C67D3CA00C9C61F /* ContentView.swift */,
@@ -158,13 +190,13 @@
 			path = BugItUITests;
 			sourceTree = "<group>";
 		};
-		7148849C2C69540400EA6355 /* Sheets */ = {
+		7148849C2C69540400EA6355 /* ReportBug */ = {
 			isa = PBXGroup;
 			children = (
-				7148849F2C695C7900EA6355 /* client_601545119036-nv78jf2rmcftsqnf31a3251ha24nb1q5.apps.googleusercontent.com.plist */,
-				7148849D2C69543200EA6355 /* GoogleSheetsRepo.swift */,
+				7110DCB92C6C0C8000760522 /* Data */,
+				7110DCB82C6C0C1E00760522 /* UI */,
 			);
-			path = Sheets;
+			path = ReportBug;
 			sourceTree = "<group>";
 		};
 		97A017A0E803CF51A9F71B5F /* Pods */ = {
@@ -292,7 +324,6 @@
 			files = (
 				71447F512C67D3CB00C9C61F /* Preview Assets.xcassets in Resources */,
 				71447F4E2C67D3CB00C9C61F /* Assets.xcassets in Resources */,
-				714884A02C695C7900EA6355 /* client_601545119036-nv78jf2rmcftsqnf31a3251ha24nb1q5.apps.googleusercontent.com.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,7 +390,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7148849E2C69543200EA6355 /* GoogleSheetsRepo.swift in Sources */,
+				7110DCBE2C6C0F3200760522 /* GoogleSheetsModel.swift in Sources */,
+				7148849E2C69543200EA6355 /* GoogleSheetsService.swift in Sources */,
 				7110DCB72C6B856A00760522 /* ReportBugViewModel.swift in Sources */,
 				71447F4C2C67D3CA00C9C61F /* ContentView.swift in Sources */,
 				7110DCB32C6B570F00760522 /* HTTPClient.swift in Sources */,
