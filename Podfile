@@ -9,7 +9,6 @@ target 'BugIt' do
 
 pod 'GoogleSignIn'
 pod 'GoogleSignInSwiftSupport'
-pod 'Alamofire'
 pod 'netfox'
 
 #  target 'BugItTests' do

@@ -1,6 +1,6 @@
 import Foundation
 
-@MainActor public class ReportBugViewModel: ObservableObject {
+public class ReportBugViewModel: ObservableObject {
     let bugService: BugServices
 
     init(bugService: BugServices) {
@@ -15,22 +15,26 @@ import Foundation
         } else {
             tabID = try await bugService.createTab(title: .today)
             // adding headers to the newly created sheet
-            try await bugService.recordBug(tabName: .today, description: "Bug description", imageURLs: ["screenshot URLs..."])
+            try await bugService.recordBug(tabName: .today,
+                                           description: "Bug description",
+                                           imageURLs: ["screenshot URLs..."])
         }
         var tabs = UserDefaultsShared.sheetTabs
         tabs[.today] = tabID
         UserDefaultsShared.sheetTabs = tabs
     }
-    
-    func reportBug(description: String) async {
+
+    func reportBug(description: String, images: [Data]) async {
         do {
             // only handle checking existing tab or creating new one if no record of it exists
             if UserDefaultsShared.sheetTabs[.today] == nil {
                 try await handleTodayTab()
             }
 
-
-            try await bugService.recordBug(tabName: .today, description: "description", imageURLs: ["https://images.app.goo.gl/Y5Z7frTDHmaEe9Nf8", "https://images.app.goo.gl/Vwj3RcewGNNSDWtm8"])
+            let imageURLs = try await bugService.uploadScreenshot(imagesData: images)
+            try await bugService.recordBug(tabName: .today,
+                                           description: description,
+                                           imageURLs: imageURLs)
         } catch {
             print(error.localizedDescription)
         }
@@ -44,7 +48,7 @@ private extension GoogleSheetsModel {
 }
 
 private extension String {
-    static var today: String {
+    static var today: Self {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         return dateFormatter.string(from: Date())

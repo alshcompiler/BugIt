@@ -9,7 +9,8 @@ import GoogleSignIn
 
 protocol BugServices {
     func getSheets() async throws -> GoogleSheetsModel
-    func createTab(title: String) async  throws -> Int
+    func createTab(title: String) async throws -> Int
+    func uploadScreenshot(imagesData: [Data]) async throws -> [String]
     func recordBug(tabName: String, description: String, imageURLs: [String]) async throws
 }
 
@@ -55,8 +56,28 @@ struct GoogleSheetsService: BugServices {
         return response
     }
 
+    func uploadScreenshot(imagesData: [Data]) async throws -> [String] {
+        var imageUrls: [String] = []
+        try await withThrowingTaskGroup(of: String.self) { group in
+            for imageData in imagesData {
+                group.addTask {
+                    try await httpClient.uploadMultipart(
+                        url: "https://api.imgur.com/3/image",
+                        fileData: imageData,
+                        responseType: ImageResponseModel.self).data.link
+                }
+            }
+
+            for try await imageURL in group {
+                imageUrls.append(imageURL)
+            }
+        }
+        return imageUrls
+    }
+
     func recordBug(tabName: String, description: String, imageURLs: [String]) async throws {
 
+        // can add any kind of values to parameters below, it's [String] after all.
         let parameters = ["values" : [[description] + imageURLs]]
         let url =  .baseURL + .spreadSheetID + "/values/\(tabName):append?valueInputOption=RAW"
         _ = try await httpClient.performRequest(

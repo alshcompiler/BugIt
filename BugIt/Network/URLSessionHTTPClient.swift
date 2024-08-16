@@ -1,6 +1,4 @@
 import Foundation
-
-import Alamofire
 import Combine
 import GoogleSignIn
 
@@ -60,6 +58,9 @@ public class URLSessionHTTPClient: HTTPClient {
         }
         
         do {
+            if T.self == Data.self {
+                return data as! T
+            }
             let decodedResponse = try JSONDecoder().decode(T.self, from: data)
             return decodedResponse
         } catch {
@@ -68,26 +69,72 @@ public class URLSessionHTTPClient: HTTPClient {
         }
     }
 
-    public func upload(url: String, fileData: Data, parameters: [String: String]) async throws {
-//    TODO: handle if needed
-//        try await withUnsafeThrowingContinuation { continuation in
-//            AF.upload(multipartFormData: { multipartFormData in
-//                for (key, value) in parameters {
-//                    if let data = value.data(using: .utf8) {
-//                        multipartFormData.append(data, withName: key)
-//                    }
-//                }
-//                multipartFormData.append(fileData, withName: "file")
-//            }, to: url)
-//            .validate()
-//            .responseData(completionHandler: { response in
-//                switch response.result {
-//                case .success:
-//                    continuation.resume()
-//                case .failure(_):
-//                    continuation.resume(throwing: NetworkError.connectivity)
-//                }
-//            })
-//        }
+    public func uploadMultipart<T: Decodable>(url: String,
+                                              fileName: String?,
+                                              fileData: Data,
+                                              parameters: [String: String],
+                                              responseType: T.Type) async throws -> T {
+        guard let url = URL(string: url) else {
+            throw URLError(.badURL)
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.addValue("Client-ID e74e94ffb32528f", forHTTPHeaderField: "Authorization")
+        let boundary = UUID().uuidString
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        let fileNameResult = fileName ?? String.generateRandomString(length: .fileNameLength) + ".jpg"
+        let body = createMultipartBody(boundary: boundary,
+                                       fileData: fileData,
+                                       fileName: fileNameResult)
+        request.httpBody = body
+        let (data, response) = try await URLSession.shared.data(for: request)
+        guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+            throw URLError(.badServerResponse)
+        }
+
+        do {
+            let decodedResponse = try JSONDecoder().decode(T.self, from: data)
+            return decodedResponse
+        } catch {
+            // Handle any decoding errors
+            throw NetworkError.invalidData
+        }
     }
+}
+
+private extension URLSessionHTTPClient {
+    func createMultipartBody(boundary: String, fileData: Data, fileName: String, additionalFields: [String: String] = [:]) -> Data {
+        var body = Data()
+
+        // Add additional fields
+            for (key, value) in additionalFields {
+                body.append("--\(boundary)\r\n")
+                body.append("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
+                body.append("\(value)\r\n")
+            }
+
+        // Add file data
+        body.append("--\(boundary)\r\n")
+        body.append("Content-Disposition: form-data; name=\"image\"; filename=\"\(fileName)\"\r\n")
+        body.append("Content-Type: \"content-type header\"\r\n\r\n")
+        body.append(fileData)
+        body.append("\r\n")
+
+        // End the multipart form data
+        body.append("--\(boundary)--\r\n")
+
+        return body
+    }
+}
+
+private extension Data {
+    mutating func append(_ string: String) {
+        if let data = string.data(using: .utf8) {
+            append(data)
+        }
+    }
+}
+
+private extension Int {
+    static let fileNameLength = 20
 }

@@ -20,7 +20,11 @@ public protocol HTTPClient {
                                       encoding: ParameterEncoding,
                                       isAuthorized: Bool,
                                       responseType: T.Type) async throws -> T
-    func upload(url: String, fileData: Data, parameters: [String: String]) async throws
+    func uploadMultipart<T: Decodable>(url: String,
+                                       fileName: String?,
+                                       fileData: Data,
+                                       parameters: [String: String],
+                                       responseType: T.Type) async throws -> T
 }
 
 public enum NetworkError: LocalizedError {
@@ -56,5 +60,17 @@ public extension HTTPClient {
                                  encoding: encoding,
                                  isAuthorized: isAuthorized,
                                  responseType: responseType)
+    }
+
+    func uploadMultipart<T: Decodable>(url: String,
+                                       fileName: String? = nil,
+                                       fileData: Data,
+                                       parameters: [String: String] = [:],
+                                       responseType: T.Type) async throws -> T {
+        try await uploadMultipart(url: url,
+                                  fileName: fileName,
+                                  fileData: fileData,
+                                  parameters: parameters,
+                                  responseType: responseType)
     }
 }
