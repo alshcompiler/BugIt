@@ -20,6 +20,9 @@
 		71447F672C67D3CB00C9C61F /* BugItUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71447F662C67D3CB00C9C61F /* BugItUITestsLaunchTests.swift */; };
 		7148849E2C69543200EA6355 /* GoogleSheetsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7148849D2C69543200EA6355 /* GoogleSheetsService.swift */; };
 		71583B742C6FD1B500361A1E /* UIImageExtenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71583B732C6FD1B500361A1E /* UIImageExtenstion.swift */; };
+		71583B782C70AF9800361A1E /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71583B772C70AF9800361A1E /* SplashScreenView.swift */; };
+		71583B7A2C70B7CC00361A1E /* EnvironmentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71583B792C70B7CC00361A1E /* EnvironmentExtension.swift */; };
+		71583B7C2C70C3BD00361A1E /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71583B7B2C70C3BD00361A1E /* SignInView.swift */; };
 		7183D1352C6D5A0500EAB487 /* UserDefaultsShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183D1342C6D5A0500EAB487 /* UserDefaultsShared.swift */; };
 		7183D1372C6D761000EAB487 /* ImageResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183D1362C6D761000EAB487 /* ImageResponseModel.swift */; };
 		7183D13A2C6D7C4800EAB487 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183D1392C6D7C4800EAB487 /* StringExtension.swift */; };
@@ -62,6 +65,9 @@
 		7148849D2C69543200EA6355 /* GoogleSheetsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSheetsService.swift; sourceTree = "<group>"; };
 		714884A12C695CD100EA6355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		71583B732C6FD1B500361A1E /* UIImageExtenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtenstion.swift; sourceTree = "<group>"; };
+		71583B772C70AF9800361A1E /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		71583B792C70B7CC00361A1E /* EnvironmentExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentExtension.swift; sourceTree = "<group>"; };
+		71583B7B2C70C3BD00361A1E /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		7183D1342C6D5A0500EAB487 /* UserDefaultsShared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsShared.swift; sourceTree = "<group>"; };
 		7183D1362C6D761000EAB487 /* ImageResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResponseModel.swift; sourceTree = "<group>"; };
 		7183D1392C6D7C4800EAB487 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -107,6 +113,8 @@
 		7110DCB82C6C0C1E00760522 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				71583B762C70AA2B00361A1E /* View */,
+				71583B752C70AA1800361A1E /* ViewModel */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -166,9 +174,6 @@
 				7183D1322C6D59E100EAB487 /* Core */,
 				7110DCB12C6B56FF00760522 /* Network */,
 				7148849C2C69540400EA6355 /* ReportBug */,
-				71447F492C67D3CA00C9C61F /* BugItApp.swift */,
-				7110DCB62C6B856A00760522 /* ReportBugViewModel.swift */,
-				71447F4B2C67D3CA00C9C61F /* ContentView.swift */,
 				71447F4D2C67D3CB00C9C61F /* Assets.xcassets */,
 				71447F4F2C67D3CB00C9C61F /* Preview Content */,
 			);
@@ -209,9 +214,36 @@
 			path = ReportBug;
 			sourceTree = "<group>";
 		};
+		71583B752C70AA1800361A1E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7110DCB62C6B856A00760522 /* ReportBugViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		71583B762C70AA2B00361A1E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71447F492C67D3CA00C9C61F /* BugItApp.swift */,
+				71583B772C70AF9800361A1E /* SplashScreenView.swift */,
+				71447F4B2C67D3CA00C9C61F /* ContentView.swift */,
+				71583B7B2C70C3BD00361A1E /* SignInView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		71583B7D2C70D22E00361A1E /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "UI Components";
+			sourceTree = "<group>";
+		};
 		7183D1322C6D59E100EAB487 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				71583B7D2C70D22E00361A1E /* UI Components */,
 				7183D1382C6D7C3600EAB487 /* Extensions */,
 				7183D1332C6D59E900EAB487 /* Utilities */,
 			);
@@ -231,6 +263,7 @@
 			children = (
 				7183D1392C6D7C4800EAB487 /* StringExtension.swift */,
 				71583B732C6FD1B500361A1E /* UIImageExtenstion.swift */,
+				71583B792C70B7CC00361A1E /* EnvironmentExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -428,15 +461,18 @@
 			files = (
 				7110DCBE2C6C0F3200760522 /* GoogleSheetsModel.swift in Sources */,
 				7183D1352C6D5A0500EAB487 /* UserDefaultsShared.swift in Sources */,
+				71583B7A2C70B7CC00361A1E /* EnvironmentExtension.swift in Sources */,
 				7183D13A2C6D7C4800EAB487 /* StringExtension.swift in Sources */,
 				7148849E2C69543200EA6355 /* GoogleSheetsService.swift in Sources */,
 				7110DCB72C6B856A00760522 /* ReportBugViewModel.swift in Sources */,
 				7183D1372C6D761000EAB487 /* ImageResponseModel.swift in Sources */,
 				71447F4C2C67D3CA00C9C61F /* ContentView.swift in Sources */,
+				71583B7C2C70C3BD00361A1E /* SignInView.swift in Sources */,
 				7110DCB32C6B570F00760522 /* HTTPClient.swift in Sources */,
 				71447F4A2C67D3CA00C9C61F /* BugItApp.swift in Sources */,
 				7110DCB52C6B5AF900760522 /* URLSessionHTTPClient.swift in Sources */,
 				71583B742C6FD1B500361A1E /* UIImageExtenstion.swift in Sources */,
+				71583B782C70AF9800361A1E /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
