@@ -3,6 +3,10 @@ import Foundation
 public class ReportBugViewModel: ObservableObject {
     let bugService: BugServices
 
+    @Published var isLoading: Bool = false
+    @Published var alertContent: AlertContent?
+    @Published var shouldResetState = false
+
     init(bugService: BugServices) {
         self.bugService = bugService
     }
@@ -26,6 +30,9 @@ public class ReportBugViewModel: ObservableObject {
 
     func reportBug(description: String, images: [Data]) async {
         do {
+            await MainActor.run {
+                isLoading = true
+            }
             // only handle checking existing tab or creating new one if no record of it exists
             if UserDefaultsShared.sheetTabs[.today] == nil {
                 try await handleTodayTab()
@@ -35,9 +42,29 @@ public class ReportBugViewModel: ObservableObject {
             try await bugService.recordBug(tabName: .today,
                                            description: description,
                                            imageURLs: imageURLs)
+            await MainActor.run {
+                isLoading = false
+                shouldResetState = true
+                self.alertContent = .init(title: "success", description: "Bug submitted successfully!")
+            }
         } catch {
-            print(error.localizedDescription)
+            await MainActor.run {
+                isLoading = false
+                alertContent = .init(title: "error", description: error.localizedDescription)
+            }
         }
+    }
+
+    func resetContentViewState() {
+        shouldResetState = true
+    }
+
+    func finalizeReset() {
+        shouldResetState = false
+    }
+
+    func alertContentDismissed() {
+        alertContent = nil
     }
 }
 
