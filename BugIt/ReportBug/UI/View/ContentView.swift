@@ -6,6 +6,7 @@ struct ContentView: View {
     @StateObject var viewModel: ReportBugViewModel
 
     @Environment(\.isSignedIn) var isSignedIn
+    @State var didSignIn = false
 
     @State private var bugDescriptionText: String = ""
     @FocusState private var isTextEditorFocused: Bool
@@ -43,7 +44,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             VStack {
-                if isSignedIn {
+                if isSignedIn || didSignIn {
                     Text("Report a bug")
                         .font(.title)
                         .bold()
@@ -264,9 +265,7 @@ private extension ContentView {
             additionalScopes: ["https://www.googleapis.com/auth/spreadsheets"]
         ) { signInResult, error in
             if let _ = signInResult {
-                // Inspect error
-                alertContent = .loginFailure
-                showAlert = true
+                didSignIn = true
             }
         }
     }
