@@ -185,10 +185,11 @@ private extension ContentView {
             Image(systemName: "plus")
                 .resizable()
                 .scaledToFit()
+                .padding(30)
                 .frame(width: Constants.gridItemDimention,
                        height: Constants.gridItemDimention)
-                .background(Color.blue)
-                .foregroundColor(.white)
+                .background(.clear)
+                .foregroundColor(.blue)
                 .cornerRadius(Constants.cornerRadius)
         }
     }
@@ -294,7 +295,7 @@ private extension AlertContent {
 }
 
 #Preview {
-    ContentView(viewModel: ReportBugViewModel(bugService: GoogleSheetsService(httpClient: URLSessionHTTPClient())))
+    ContentView(viewModel: ReportBugViewModel())
         .environment(\.isSignedIn, true)
 }
 

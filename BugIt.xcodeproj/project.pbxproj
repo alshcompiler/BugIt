@@ -3,12 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7110DCB32C6B570F00760522 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110DCB22C6B570F00760522 /* HTTPClient.swift */; };
-		7110DCB52C6B5AF900760522 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110DCB42C6B5AF900760522 /* URLSessionHTTPClient.swift */; };
 		7110DCB72C6B856A00760522 /* ReportBugViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110DCB62C6B856A00760522 /* ReportBugViewModel.swift */; };
 		7110DCBE2C6C0F3200760522 /* GoogleSheetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110DCBD2C6C0F3200760522 /* GoogleSheetsModel.swift */; };
 		71447F4A2C67D3CA00C9C61F /* BugItApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71447F492C67D3CA00C9C61F /* BugItApp.swift */; };
@@ -27,6 +25,7 @@
 		7183D1372C6D761000EAB487 /* ImageResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183D1362C6D761000EAB487 /* ImageResponseModel.swift */; };
 		7183D13A2C6D7C4800EAB487 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183D1392C6D7C4800EAB487 /* StringExtension.swift */; };
 		7197104D2C73D87400E8C309 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7197104C2C73D87400E8C309 /* ImagePicker.swift */; };
+		71DA1F7F2C7522A4006A69F5 /* BugItNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = 71DA1F7E2C7522A4006A69F5 /* BugItNetwork */; };
 		87C3AE3F97E8D510976B37FA /* Pods_BugIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5494C37DFFDEA3862C175B86 /* Pods_BugIt.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,8 +48,6 @@
 
 /* Begin PBXFileReference section */
 		5494C37DFFDEA3862C175B86 /* Pods_BugIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BugIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7110DCB22C6B570F00760522 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
-		7110DCB42C6B5AF900760522 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		7110DCB62C6B856A00760522 /* ReportBugViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportBugViewModel.swift; sourceTree = "<group>"; };
 		7110DCBD2C6C0F3200760522 /* GoogleSheetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSheetsModel.swift; sourceTree = "<group>"; };
 		71447F462C67D3CA00C9C61F /* BugIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BugIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87C3AE3F97E8D510976B37FA /* Pods_BugIt.framework in Frameworks */,
+				71DA1F7F2C7522A4006A69F5 /* BugItNetwork in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,15 +101,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7110DCB12C6B56FF00760522 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				7110DCB22C6B570F00760522 /* HTTPClient.swift */,
-				7110DCB42C6B5AF900760522 /* URLSessionHTTPClient.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		7110DCB82C6C0C1E00760522 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,7 +163,6 @@
 			children = (
 				714884A12C695CD100EA6355 /* Info.plist */,
 				7183D1322C6D59E100EAB487 /* Core */,
-				7110DCB12C6B56FF00760522 /* Network */,
 				7148849C2C69540400EA6355 /* ReportBug */,
 				71447F4D2C67D3CB00C9C61F /* Assets.xcassets */,
 				71447F4F2C67D3CB00C9C61F /* Preview Content */,
@@ -235,17 +223,9 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		71583B7D2C70D22E00361A1E /* UI Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "UI Components";
-			sourceTree = "<group>";
-		};
 		7183D1322C6D59E100EAB487 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				71583B7D2C70D22E00361A1E /* UI Components */,
 				7183D1382C6D7C3600EAB487 /* Extensions */,
 				7183D1332C6D59E900EAB487 /* Utilities */,
 			);
@@ -306,6 +286,9 @@
 			dependencies = (
 			);
 			name = BugIt;
+			packageProductDependencies = (
+				71DA1F7E2C7522A4006A69F5 /* BugItNetwork */,
+			);
 			productName = BugIt;
 			productReference = 71447F462C67D3CA00C9C61F /* BugIt.app */;
 			productType = "com.apple.product-type.application";
@@ -378,6 +361,9 @@
 				Base,
 			);
 			mainGroup = 71447F3D2C67D3CA00C9C61F;
+			packageReferences = (
+				71DA1F7D2C7522A4006A69F5 /* XCLocalSwiftPackageReference "../BugItNetwork/BugItNetwork" */,
+			);
 			productRefGroup = 71447F472C67D3CA00C9C61F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -471,9 +457,7 @@
 				7183D1372C6D761000EAB487 /* ImageResponseModel.swift in Sources */,
 				71447F4C2C67D3CA00C9C61F /* ContentView.swift in Sources */,
 				71583B7C2C70C3BD00361A1E /* SignInView.swift in Sources */,
-				7110DCB32C6B570F00760522 /* HTTPClient.swift in Sources */,
 				71447F4A2C67D3CA00C9C61F /* BugItApp.swift in Sources */,
-				7110DCB52C6B5AF900760522 /* URLSessionHTTPClient.swift in Sources */,
 				7197104D2C73D87400E8C309 /* ImagePicker.swift in Sources */,
 				71583B742C6FD1B500361A1E /* UIImageExtenstion.swift in Sources */,
 				71583B782C70AF9800361A1E /* SplashScreenView.swift in Sources */,
@@ -816,6 +800,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		71DA1F7D2C7522A4006A69F5 /* XCLocalSwiftPackageReference "../BugItNetwork/BugItNetwork" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../BugItNetwork/BugItNetwork;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		71DA1F7E2C7522A4006A69F5 /* BugItNetwork */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BugItNetwork;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 71447F3E2C67D3CA00C9C61F /* Project object */;
 }

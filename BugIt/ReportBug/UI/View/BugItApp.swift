@@ -30,9 +30,7 @@ struct BugItApp: App {
                             }
                         }
                 } else {
-                    ContentView(
-                        viewModel: ReportBugViewModel(bugService: GoogleSheetsService(httpClient: URLSessionHTTPClient()))
-                    )
+                    ContentView(viewModel: ReportBugViewModel())
                     .transition(.opacity)
                     .onOpenURL { url in
                         GIDSignIn.sharedInstance.handle(url)

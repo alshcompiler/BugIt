@@ -7,7 +7,7 @@ public class ReportBugViewModel: ObservableObject {
     @Published var alertContent: AlertContent?
     @Published var shouldResetState = false
 
-    init(bugService: BugServices) {
+    init(bugService: BugServices = GoogleSheetsService()) {
         self.bugService = bugService
     }
 
