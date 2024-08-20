@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,7 @@
 		7183D13A2C6D7C4800EAB487 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183D1392C6D7C4800EAB487 /* StringExtension.swift */; };
 		7197104D2C73D87400E8C309 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7197104C2C73D87400E8C309 /* ImagePicker.swift */; };
 		71DA1F7F2C7522A4006A69F5 /* BugItNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = 71DA1F7E2C7522A4006A69F5 /* BugItNetwork */; };
+		71DA1F822C752BF1006A69F5 /* BugItNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = 71DA1F812C752BF1006A69F5 /* BugItNetwork */; };
 		87C3AE3F97E8D510976B37FA /* Pods_BugIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5494C37DFFDEA3862C175B86 /* Pods_BugIt.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 			files = (
 				87C3AE3F97E8D510976B37FA /* Pods_BugIt.framework in Frameworks */,
 				71DA1F7F2C7522A4006A69F5 /* BugItNetwork in Frameworks */,
+				71DA1F822C752BF1006A69F5 /* BugItNetwork in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +290,7 @@
 			name = BugIt;
 			packageProductDependencies = (
 				71DA1F7E2C7522A4006A69F5 /* BugItNetwork */,
+				71DA1F812C752BF1006A69F5 /* BugItNetwork */,
 			);
 			productName = BugIt;
 			productReference = 71447F462C67D3CA00C9C61F /* BugIt.app */;
@@ -362,7 +365,7 @@
 			);
 			mainGroup = 71447F3D2C67D3CA00C9C61F;
 			packageReferences = (
-				71DA1F7D2C7522A4006A69F5 /* XCLocalSwiftPackageReference "../BugItNetwork/BugItNetwork" */,
+				71DA1F802C752BF1006A69F5 /* XCRemoteSwiftPackageReference "BugItNetwork" */,
 			);
 			productRefGroup = 71447F472C67D3CA00C9C61F /* Products */;
 			projectDirPath = "";
@@ -801,16 +804,25 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		71DA1F7D2C7522A4006A69F5 /* XCLocalSwiftPackageReference "../BugItNetwork/BugItNetwork" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../BugItNetwork/BugItNetwork;
+/* Begin XCRemoteSwiftPackageReference section */
+		71DA1F802C752BF1006A69F5 /* XCRemoteSwiftPackageReference "BugItNetwork" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alshcompiler/BugItNetwork";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		71DA1F7E2C7522A4006A69F5 /* BugItNetwork */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = BugItNetwork;
+		};
+		71DA1F812C752BF1006A69F5 /* BugItNetwork */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 71DA1F802C752BF1006A69F5 /* XCRemoteSwiftPackageReference "BugItNetwork" */;
 			productName = BugItNetwork;
 		};
 /* End XCSwiftPackageProductDependency section */
